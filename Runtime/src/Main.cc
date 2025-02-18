@@ -26,5 +26,6 @@ int main() {
     HostCMD("\"CMD /C ECHO %USERNAME%|CLIP\"");
     string UserName = ReadClip();
     cprintf((string("Hello ") + UserName + ", On Machine " + HostName + "!\r\n").c_str());
+    HostCMD("CALC.EXE");
     return 0;
 }
