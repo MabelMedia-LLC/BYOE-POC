@@ -18,9 +18,9 @@ string ReadClip() {
 }
 
 int main() {
-    HostCMD("\"CMD /C HOSTNAME|CLIP\"");
+    HostCMD("CMD /C \"HOSTNAME|CLIP\"");
     string HostName = ReadClip();
-    HostCMD("\"CMD /C ECHO %USERNAME%|CLIP\"");
+    HostCMD("CMD /C \"ECHO %USERNAME%|CLIP\"");
     string UserName = ReadClip();
     cprintf((string("Hello ") + UserName + ", On Machine " + HostName + "!\r\n").c_str());
     return 0;
