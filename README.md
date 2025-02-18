@@ -14,3 +14,6 @@ A: Standard DOSBox Requires 2 DLLs in Addition To It's Main Exec, And DOSBox-x D
 It Also Eliminates The Need To Ship A DPMI Server (Usually CWSDPMI.EXE) Inside The Disk Image (Saving ~22K).
 
 Signiture Rules Welcome! (Please Open PRs Adding Them, As I'm Not Familliar With Them).
+
+# Demo (v0.0.1)
+![Demo.gif](Demo.gif)
