@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+# Requires MTOOLS To Build Floppy Image.
+# Requires DJGPP To Compile Runtime Program.
+
+. /usr/local/djgpp/setenv
+
+rm -r Release
+mkdir Release
+cp Static/* Release
+g++ Runtime/src/*.cc -o Release/Runtime.exe -Os -fomit-frame-pointer -s
+dd if=/dev/zero of=Release/Floppy.img bs=512 count=2880
+mformat -i Release/Floppy.img
+mcopy -i Release/Floppy.img Release/Runtime.exe ::/RUNTIME.EXE
