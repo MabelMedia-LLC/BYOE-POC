@@ -8,7 +8,7 @@
 rm -r Release
 mkdir Release
 cp Static/* Release
-g++ Runtime/src/*.cc -o Release/Runtime.exe -O3 -fomit-frame-pointer
+g++ Runtime/src/*.cc -o Release/Runtime.exe -Os -fomit-frame-pointer
 strip Release/Runtime.exe
 upx --best --lzma Release/Runtime.exe
 dd if=/dev/zero of=Release/Floppy.img bs=512 count=2880

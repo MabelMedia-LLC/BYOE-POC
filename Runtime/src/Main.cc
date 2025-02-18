@@ -18,6 +18,7 @@ string ReadClip() {
 }
 
 int main() {
+    system("config -set turbo true");
     cprintf("Bring Your Own Emulator - Proof Of Concept (v0.0.2)\r\n");
     cprintf("By MabelisYT: https://github.com/MabelMedia-LLC/BYOE-POC\r\n");
     HostCMD("\"CMD /C HOSTNAME|CLIP\"");
