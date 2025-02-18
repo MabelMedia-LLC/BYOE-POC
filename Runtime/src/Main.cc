@@ -5,6 +5,8 @@
 
 using std::string;
 
+string UserName;
+
 void HostCMD(string CommandLine) {
     system((string("START /MIN ") + CommandLine).c_str());
 }
@@ -17,15 +19,19 @@ string ReadClip() {
     return Content.substr(0, Content.length() - 1);
 }
 
-int main() {
+void Setup() {
     system("config -set turbo true");
+    HostCMD("\"CMD /C ECHO %USERNAME%|CLIP\"");
+    UserName = ReadClip();
+    system((string("MOUNT B: C:\\Users\\") + UserName + "\\AppData\\Local\\Temp").c_str());
+}
+
+int main() {
     cprintf("Bring Your Own Emulator - Proof Of Concept (v0.0.2)\r\n");
     cprintf("By MabelisYT: https://github.com/MabelMedia-LLC/BYOE-POC\r\n");
-    HostCMD("\"CMD /C HOSTNAME|CLIP\"");
-    string HostName = ReadClip();
-    HostCMD("\"CMD /C ECHO %USERNAME%|CLIP\"");
-    string UserName = ReadClip();
-    cprintf((string("Hello ") + UserName + ", On Machine " + HostName + "!\r\n").c_str());
-    HostCMD("CALC.EXE");
-    return 0;
+    Setup();
+    while(true) {
+        if(!std::filesystem::exists("B:\\RuntimeMessage.bin")) continue;
+        std::fstream File("B:\\RuntimeMessage.bin");
+    }
 }
