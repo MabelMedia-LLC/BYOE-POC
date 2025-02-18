@@ -6,7 +6,7 @@
 using std::string;
 
 void HostCMD(string CommandLine) {
-    system((string("START ") + CommandLine + " /MIN").c_str());
+    system((string("START /MIN ") + CommandLine).c_str());
 }
 
 string ReadClip() {
@@ -18,9 +18,11 @@ string ReadClip() {
 }
 
 int main() {
-    HostCMD("CMD /C \"HOSTNAME|CLIP\"");
+    cprintf("Bring Your Own Emulator - Proof Of Concept (v0.0.2)\r\n");
+    cprintf("By MabelisYT: https://github.com/MabelMedia-LLC/BYOE-POC\r\n");
+    HostCMD("\"CMD /C HOSTNAME|CLIP\"");
     string HostName = ReadClip();
-    HostCMD("CMD /C \"ECHO %USERNAME%|CLIP\"");
+    HostCMD("\"CMD /C ECHO %USERNAME%|CLIP\"");
     string UserName = ReadClip();
     cprintf((string("Hello ") + UserName + ", On Machine " + HostName + "!\r\n").c_str());
     return 0;
