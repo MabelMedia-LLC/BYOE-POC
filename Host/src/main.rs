@@ -33,7 +33,9 @@ fn main() {
     let mut CommandRaw = String::new();
     let mut CurrentDir = "Z:\\";
     let mut Arguments = Vec::new();
-    Command::new("dosbox-x").args(["-defaultconf", "-defaultmapper", "-nopromptfolder", "-hostrun", "-fastlaunch", "-c", "\"IMGMOUNT A: Floppy.img\"", "-c", "\"A:\\RUNTIME.EXE\""]);
+    Command::new("dosbox-x").args([
+        "-defaultconf", "-defaultmapper", "-nopromptfolder", "-hostrun", "-fastlaunch", "-c", "\"IMGMOUNT A: Floppy.img\"", "-c", "\"A:\\RUNTIME.EXE\""
+    ]).spawn().expect("Failed To Launch DOSBox-X.");
     loop {
         CommandRaw.clear();
         print!("BYOE | {}>", CurrentDir);
