@@ -33,5 +33,9 @@ int main() {
     while(true) {
         if(!std::filesystem::exists("B:\\RuntimeMessage.bin")) continue;
         std::fstream File("B:\\RuntimeMessage.bin");
+        string Content {
+            std::istreambuf_iterator<char>(File), std::istreambuf_iterator<char>()
+        };
+        cprintf((string("Found Message File: ") + std::to_string(Content.length()) + " Bytes.").c_str());
     }
 }
