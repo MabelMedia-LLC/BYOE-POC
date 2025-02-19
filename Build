@@ -2,11 +2,11 @@
 
 # Requires MTOOLS To Build Floppy Image.
 # Requires DJGPP To Compile Runtime Program.
-
-. /usr/local/djgpp/setenv
+# Requires QuicBuild (Via MabelHUB), Cargo/RustLang & MinGW-64 To Compile host Program.
 
 rm -r Release
-mkdir Release
+QuicBuild Host x86_64-pc-windows-gnu $@
+. /usr/local/djgpp/setenv
 cp Static/* Release
 g++ Runtime/src/*.cc -o Release/Runtime.exe -O3 -fomit-frame-pointer -fno-exceptions
 strip Release/Runtime.exe
