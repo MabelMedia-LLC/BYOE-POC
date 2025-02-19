@@ -15,5 +15,5 @@ It Also Eliminates The Need To Ship A DPMI Server (Usually CWSDPMI.EXE) Inside T
 
 Signiture Rules Welcome! (Please Open PRs Adding Them, As I'm Not Familliar With Them).
 
-# Demo (v0.0.2)
+# Demo (v0.0.3)
 ![Demo.gif](Demo.gif)
