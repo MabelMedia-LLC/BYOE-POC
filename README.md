@@ -15,5 +15,9 @@ It Also Eliminates The Need To Ship A DPMI Server (Usually CWSDPMI.EXE) Inside T
 
 Signiture Rules Welcome! (Please Open PRs Adding Them, As I'm Not Familliar With Them).
 
+Q: Why Also A Windows Host Process?
+
+A: So It Can Perform Process Down-Chain Smuggling Over Disk-Backed IPC, And Allow For A C&C To Not be Needed For This POC (Comes With A Command Line Instead).
+
 # Demo (v0.0.3)
 ![Demo.gif](Demo.gif)
